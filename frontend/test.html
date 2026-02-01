@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emotion Toggle</title>
+<link rel="stylesheet" href="wordcloude_style.css">
+</head>
+<body>
+  <h3>Emotions Categorize (44)</h3>
+
+  <div class="dropdown" id="emotionDropdown">
+    <button class="toggle-btn" id="toggleBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+      <div class="label">
+        <span class="title">감정 선택</span>
+        <span class="value" id="selectedText">불평/불만</span>
+      </div>
+      <span class="chev" aria-hidden="true"></span>
+    </button>
+
+    <div class="menu" id="menu" role="listbox" aria-label="KOTE emotions"></div>
+  </div>
+
+  <div class="out">
+    현재 선택: <code id="debugOut">불평/불만</code>
+    <div class="emotion-description"></div>
+  </div>
+
+  <script src="js/wordcloud.js"></script>
+</body>
+</html>

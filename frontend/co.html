@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Co-Reading Web Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CRS/style.css" />
+</head>
+<body>
+  <div class="window">
+    <div class="window-header">
+      <div class="traffic-lights">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+      </div>
+    </div>
+
+    <div class="window-body">
+      <label for="userText">User Text Area</label>
+      <textarea id="userText" placeholder="텍스트를 입력해 주세요.">미풍이 웃는 아침을 기원하련다</textarea>
+        <button id="analyzeButton">Co-Reading</button>
+        <button id="analyzeResetButton">Reset</button>
+      <div class="revealing-row">
+        <span class="revealing-value" id="revealingValue">-</span>
+
+        <!-- 분석중 모션 -->
+        <span class="analyzing" id="analyzing">
+          Reading
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+      </div>
+
+      <div class="gradient-box" id="gradientBox">
+        <div class="gradient-fill" id="gradientFill"></div>
+      </div>
+
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="swatch" id="swatch1"></div>
+          <div class="legend-text" id="legend1"></div>
+        </div>
+        <div class="legend-item">
+          <div class="swatch" id="swatch2"></div>
+          <div class="legend-text" id="legend2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
