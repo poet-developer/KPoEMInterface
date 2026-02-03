@@ -21,14 +21,65 @@
 
 /* 각 id에 색상 지정: background-color만 써도 되고,
    --emotion-color 변수도 같이 넣어두었음 */
-#불평\/불만{ --emotion-color:#6B7280; background-color:#6B7280; color:#fff; }          /* gray */
-#환영\/호의{ --emotion-color:#34D399; background-color:#34D399; }                    /* mint */
-#감동\/감탄{ --emotion-color:#F59E0B; background-color:#F59E0B; }                    /* amber */
-#지긋지긋{ --emotion-color:#4B5563; background-color:#4B5563; color:#fff; }          /* dark gray */
-#고마움{ --emotion-color:#FDE68A; background-color:#FDE68A; }                        /* soft yellow */
-#슬픔{ --emotion-color:#3B82F6; background-color:#3B82F6; color:#fff; }              /* blue */
-#화남\/분노{ --emotion-color:#EF4444; background-color:#EF4444; color:#fff; }        /* red */
-#존경{ --emotion-color:#7C3AED; background-color:#7C3AED; color:#fff; }              /* purple */
+/* #불평\/불만{ --emotion-color:#6b7280; background-color:#6B7280; color:#fff; }         
+#환영\/호의{ --emotion-color:#34D399; background-color:#34D399; }                   
+#감동\/감탄{ --emotion-color:#F59E0B; background-color:#F59E0B; }                    
+#지긋지긋{ --emotion-color:#4B5563; background-color:#4B5563; color:#fff; }        
+#고마움{ --emotion-color:#FDE68A; background-color:#FDE68A; }                        
+#슬픔{ --emotion-color:#3B82F6; background-color:#3B82F6; color:#fff; }            
+#화남\/분노{ --emotion-color:#EF4444; background-color:#EF4444; color:#fff; }    
+#존경{ --emotion-color:#7C3AED; background-color:#7C3AED; color:#fff; }              
+#기대감{ --emotion-color:#10B981; background-color:#10B981; }                     
+#우쭐댐\/무시함{ --emotion-color:#E11D48; background-color:#E11D48; color:#fff; }   
+#안타까움\/실망{ --emotion-color:#60A5FA; background-color:#60A5FA; }               
+#비장함{ --emotion-color:#111827; background-color:#111827; color:#fff; }       
+#의심\/불신{ --emotion-color:#8B5E34; background-color:#8B5E34; color:#fff; }       
+#뿌듯함{ --emotion-color:#22C55E; background-color:#22C55E; }                
+#편안\/쾌적{ --emotion-color:#A7F3D0; background-color:#A7F3D0; }                
+#신기함\/관심{ --emotion-color:#38BDF8; background-color:#38BDF8; }            
+#아껴주는{ --emotion-color:#FBCFE8; background-color:#FBCFE8; }             
+#부끄러움{ --emotion-color:#FB7185; background-color:#FB7185; }                 
+#공포\/무서움{ --emotion-color:#0F766E; background-color:#0F766E; color:#fff; }     
+#절망{ --emotion-color:#1F2937; background-color:#1F2937; color:#fff; }         
+#한심함{ --emotion-color:#9CA3AF; background-color:#9CA3AF; }                   
+#역겨움\/징그러움{ --emotion-color:#65A30D; background-color:#65A30D; color:#fff; } 
+#짜증{ --emotion-color:#F97316; background-color:#F97316; }                        
+#어이없음{ --emotion-color:#A855F7; background-color:#A855F7; color:#fff; }         
+#없음{ --emotion-color:#E5E7EB; background-color:#E5E7EB; }                          
+#패배\/자기혐오{ --emotion-color:#7F1D1D; background-color:#7F1D1D; color:#fff; }   
+#귀찮음{ --emotion-color:#9AA6B2; background-color:#9AA6B2; }                     
+#힘듦\/지침{ --emotion-color:#64748B; background-color:#64748B; color:#fff; }       
+#즐거움\/신남{ --emotion-color:#FACC15; background-color:#FACC15; }                
+#깨달음{ --emotion-color:#06B6D4; background-color:#06B6D4; }                   
+#죄책감{ --emotion-color:#5B21B6; background-color:#5B21B6; color:#fff; }          
+#증오\/혐오{ --emotion-color:#991B1B; background-color:#991B1B; color:#fff; }    
+#흐뭇함\(귀여움\/예쁨\){ --emotion-color:#FDA4AF; background-color:#FDA4AF; }       
+#당황\/난처{ --emotion-color:#F472B6; background-color:#F472B6; }                    
+#경악{ --emotion-color:#DC2626; background-color:#DC2626; color:#fff; }              
+#부담\/안_내킴{ --emotion-color:#0EA5E9; background-color:#0EA5E9; color:#fff; }     
+#서러움{ --emotion-color:#2563EB; background-color:#2563EB; color:#fff; }          
+#재미없음{ --emotion-color:#94A3B8; background-color:#94A3B8; }              
+#불쌍함\/연민{ --emotion-color:#93C5FD; background-color:#93C5FD; }          
+#놀람{ --emotion-color:#FB923C; background-color:#FB923C; }                          
+#행복{ --emotion-color:#FDE047; background-color:#FDE047; }                         
+#불안\/걱정{ --emotion-color:#0F172A; background-color:#0F172A; color:#fff; }     
+#기쁨{ --emotion-color:#A3E635; background-color:#A3E635; }                    
+#안심\/신뢰{ --emotion-color:#22D3EE; background-color:#22D3EE; }          
+
+/* (선택) 텍스트 색을 자동으로 맞추고 싶으면,
+   JS로 luminance 계산해서 color를 바꾸는 게 제일 정확함 */
+
+
+   /* 각 id에 색상 지정: background-color만 써도 되고,
+   --emotion-color 변수도 같이 넣어두었음 */
+#불평\/불만{ --emotion-color:rgb(101, 49, 121); background-color:rgb(101, 49, 121); color:#fff; }          /* gray */
+#환영\/호의{ --emotion-color:rgb(255, 99, 99); background-color:rgb(255, 99, 99); }                    /* mint */
+#감동\/감탄{ --emotion-color:rgb(190, 26, 52); background-color:rgb(190, 26, 52); }                    /* amber */
+#지긋지긋{ --emotion-color:rgb(0, 116, 56); background-color:rgb(0, 116, 56); color:#fff; }          /* dark gray */
+#고마움{ --emotion-color:rgb(224, 152, 178); background-color:rgb(224, 152, 178); }                        /* soft yellow */
+#슬픔{ --emotion-color:rgb(76, 87, 101); background-color:rgb(76, 87, 101); color:#fff; }              /* blue */
+#화남\/분노{ --emotion-color:rgb(166, 29, 57); background-color:rgb(166, 29, 57); color:#fff; }        /* red */
+#존경{ --emotion-color:rgb(169,50, 112); background-color:rgb(124, 58, 237); color:#fff; }              /* purple */
 #기대감{ --emotion-color:#10B981; background-color:#10B981; }                        /* green */
 #우쭐댐\/무시함{ --emotion-color:#E11D48; background-color:#E11D48; color:#fff; }    /* rose */
 #안타까움\/실망{ --emotion-color:#60A5FA; background-color:#60A5FA; }                /* light blue */
@@ -68,3 +119,4 @@
 
 /* (선택) 텍스트 색을 자동으로 맞추고 싶으면,
    JS로 luminance 계산해서 color를 바꾸는 게 제일 정확함 */
+
