@@ -19,30 +19,17 @@
     } */
 
     /* 상단 브라우저 바 */
-    .window-header {
-      height: 36px;
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
-    }
-
-    .traffic-lights {
-      display: flex;
-      gap: 8px;
-    }
-
-    .light {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-    .light.red { background: #d64f48; }
-    .light.yellow { background: #1b95cd; }
-    .light.green { background: #facc15; }
-
     /* 본문 영역 */
-    .window-body {
+    /* .window-body {
       padding: 18px 24px 26px;
+    } */
+
+    .window-container {
+      margin-top: 200px;
+      width: 80vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     label {

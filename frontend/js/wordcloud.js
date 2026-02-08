@@ -101,7 +101,7 @@ function renderMenu() {
     btn.dataset.value = emo;
     btn.setAttribute("role", "option");
     btn.setAttribute("aria-selected", String(emo === selected));
-    btn.innerHTML = `<span class="idx">${idx}</span> ${emo}`;
+    btn.innerHTML = `<span class="idx">${idx}</span> <span style="color:black;">${emo}</span>`;
     btn.addEventListener("click", () => {
       setSelected(emo);
       closeMenu();

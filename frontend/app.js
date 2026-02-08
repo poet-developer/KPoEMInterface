@@ -11,21 +11,40 @@
   const resetBtn = document.getElementById("analyzeResetButton");
   const gradientFill = document.getElementById("gradientFill");
 
-  const TARGET_SENTENCE = "미풍이 웃는 아침을 기원하련다";
+  const TARGET_SENTENCE = `나 보기가 역겨워
+가실 때에는
+말없이 고이 보내드리오리다.
+
+영변(寧邊)에 약산(藥山)
+진달래꽃
+아름따다 가실 길에 뿌리오리다.
+
+가시는 걸음 걸음
+놓인 그 꽃을
+사뿐히 즈려밟고 가시옵소서.
+
+나 보기가 역겨워
+가실 때에는
+죽어도 아니 눈물 흘리오리다.`;
 
   const PALETTES = [
-    // ✅ 팔레트 버전 1 (연두 → 베이지)
-    {
-      emotions: ["가벼운", "기대감", "기쁨"],
-      primary: "#E9F7A1", // 연두 (면적 큼)
-      secondary: "#E5E3D6", // 베이지 (면적 작음)
-    },
+    // // ✅ 팔레트 버전 1 (연두 → 베이지)
+    // {
+    //   emotions: ["가벼운", "기대감", "기쁨"],
+    //   primary: "#E9F7A1", // 연두 (면적 큼)
+    //   secondary: "#E5E3D6", // 베이지 (면적 작음)
+    // },
 
-    // ✅ 팔레트 버전 2 (오프화이트 → 옐로우)
+    // // ✅ 팔레트 버전 2 (오프화이트 → 옐로우)
+    // {
+    //   emotions: ["가벼운", "기대감", "기쁨"],
+    //   primary: "#E8E9D6", // 오프화이트 (면적 큼)
+    //   secondary: "#F6ECA1", // 옐로우 (면적 작음)
+    // },
     {
-      emotions: ["가벼운", "기대감", "기쁨"],
-      primary: "#E8E9D6", // 오프화이트 (면적 큼)
-      secondary: "#F6ECA1", // 옐로우 (면적 작음)
+      emotions: ["젊은", "슬픔", "서러움"],
+      primary: "#9ec0e5",
+      secondary: "#823e98",
     },
   ];
 
@@ -97,13 +116,13 @@
     legend1.innerHTML = `RGB: 229, 229, 229<br>HEX: ${initialGray}`;
     legend2.innerHTML = `RGB: 229, 229, 229<br>HEX: ${initialGray}`;
   });
-
   // ✅ 감정 → 색상 매핑
   const emotionColors = {
     초기화된: "#e5e5e5",
     화려한: "#9d3393",
     부끄러움: "#9d3393",
     슬픔: "#39657c",
+    감성적인: "",
   };
 
   function applyEmotionResult(result) {
@@ -117,8 +136,10 @@
     swatch1.style.background = startColor;
     swatch2.style.background = endColor;
 
-    legend1.innerHTML = `RGB: 157, 51, 147<br>HEX: ${startColor}`;
-    legend2.innerHTML = `RGB: 57, 101, 124<br>HEX: ${endColor}`;
+    // legend1.innerHTML = `RGB: 158, 193, 230<br>HEX: ${startColor}`;
+    // legend2.innerHTML = `RGB: 103, 152, 124<br>HEX: ${endColor}`;
+    legend1.innerHTML = `RGB: 158, 193, 230<br>HEX: #9ec0e5`;
+    legend2.innerHTML = `RGB: 103, 152, 124<br>HEX: #823e98`;
 
     analyzingEl.classList.remove("visible");
   }
