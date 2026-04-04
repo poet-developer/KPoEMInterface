@@ -26,25 +26,18 @@
 <h3>함께 읽기</h3>
 </div>
     <div class="window-body">
-      <label for="userText">User Text Area</label>
-      <textarea id="userText" placeholder="텍스트를 입력해 주세요.">나 보기가 역겨워
-가실 때에는
-말없이 고이 보내드리오리다.
+      <label for="poemSelect">시 선택</label>
+<select id="poemSelect" class="select-box">
+  <option value="">선택해 주세요</option>
+  <option value="김소월01">김소월 - 진달래꽃</option>
+</select>
 
-영변(寧邊)에 약산(藥山)
-진달래꽃
-아름따다 가실 길에 뿌리오리다.
-
-가시는 걸음 걸음
-놓인 그 꽃을
-사뿐히 즈려밟고 가시옵소서.
-
-나 보기가 역겨워
-가실 때에는
-죽어도 아니 눈물 흘리오리다.
-</textarea>
-        <button id="analyzeButton">Co-Reading</button>
-        <button id="analyzeResetButton">Reset</button>
+<label for="userText">시 전문</label>
+<textarea id="userText" readonly placeholder="시를 선택하면 전문이 표시됩니다."></textarea>
+        <div class="button-row">
+  <button id="analyzeButton">함께 읽기</button>
+  <button id="analyzeResetButton">지우기</button>
+</div>
       <div class="revealing-row">
         <span class="revealing-value" id="revealingValue">-</span>
 

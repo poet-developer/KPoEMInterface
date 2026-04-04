@@ -1,4 +1,5 @@
 (function () {
+  const poemSelect = document.getElementById("poemSelect");
   const textarea = document.getElementById("userText");
   const revealingValue = document.getElementById("revealingValue");
   const gradientBox = document.getElementById("gradientBox");
@@ -10,22 +11,6 @@
   const btn = document.getElementById("analyzeButton");
   const resetBtn = document.getElementById("analyzeResetButton");
   const gradientFill = document.getElementById("gradientFill");
-
-  const TARGET_SENTENCE = `나 보기가 역겨워
-가실 때에는
-말없이 고이 보내드리오리다.
-
-영변(寧邊)에 약산(藥山)
-진달래꽃
-아름따다 가실 길에 뿌리오리다.
-
-가시는 걸음 걸음
-놓인 그 꽃을
-사뿐히 즈려밟고 가시옵소서.
-
-나 보기가 역겨워
-가실 때에는
-죽어도 아니 눈물 흘리오리다.`;
 
   const PALETTES = [
     // // ✅ 팔레트 버전 1 (연두 → 베이지)
@@ -49,6 +34,42 @@
   ];
 
   if (!btn) return;
+
+  // ✅ 시 데이터 (추가)
+  const POEMS = {
+    김소월01: `나 보기가 역겨워
+가실 때에는
+말없이 고이 보내드리오리다.
+
+영변(寧邊)에 약산(藥山)
+진달래꽃
+아름따다 가실 길에 뿌리오리다.
+
+가시는 걸음 걸음
+놓인 그 꽃을
+사뿐히 즈려밟고 가시옵소서.
+
+나 보기가 역겨워
+가실 때에는
+죽어도 아니 눈물 흘리오리다.`,
+  };
+
+  const TARGET_SENTENCE = POEMS["김소월01"].trim();
+
+  // ✅ select → textarea 연결 (추가)
+  if (poemSelect) {
+    poemSelect.addEventListener("change", function () {
+      const selectedKey = this.value;
+
+      if (!selectedKey) {
+        textarea.value = "";
+        return;
+      }
+
+      const poem = POEMS[selectedKey] || "";
+      textarea.value = poem;
+    });
+  }
 
   btn.addEventListener("mouseover", () => btn.classList.add("hovered"));
   btn.addEventListener("mouseout", () => btn.classList.remove("hovered"));
@@ -92,6 +113,7 @@
     btn.classList.remove("active");
 
     // ✅ 입력 / 텍스트 초기화
+    poemSelect.value = "";
     textarea.value = "";
     revealingValue.textContent = "-";
     analyzingEl.classList.remove("visible");
@@ -131,6 +153,17 @@
     const text = `${emotions[0]} ${emotions[1]}과(와) ${emotions[2]}`;
     revealingValue.textContent = text;
 
+    // ⭐ 핵심 추가 (wipe 방식 유지)
+    gradientFill.style.transition = "none";
+    gradientFill.style.transform = "translateX(-100%)";
+
+    gradientFill.style.background = `linear-gradient(90deg,
+    ${startColor} 0%,
+    ${startColor} 70%,
+    ${endColor} 70%,
+    ${endColor} 100%
+  )`;
+
     gradientBox.style.background = `linear-gradient(90deg, ${startColor}, ${endColor})`;
 
     swatch1.style.background = startColor;
@@ -150,13 +183,6 @@
   swatch2.style.background = emotionColors["초기화된"];
   legend1.innerHTML = `RGB: 229, 229, 229<br>HEX: #e5e5e5`;
   legend2.innerHTML = `RGB: 229, 229, 229<br>HEX: #e5e5e5`;
-
-  gradientBox.style.background = `linear-gradient(90deg,
-    ${startColor} 0%,
-    ${startColor} 70%,
-    ${endColor} 70%,
-    ${endColor} 100%
-  )`;
 
   function analyzeText(text) {
     // ✅ 지정된 문장이 아니면 반응 안 함
