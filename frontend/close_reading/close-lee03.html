@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Close Reading | 이상 <보통기념> </title>
+<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="../styles/emotion_tag.css">
+<link rel="stylesheet" href="../styles/header.css">
+</head>
+
+<body>
+  <header>
+  <div class="logo"><a href="../../index.html">KPoEM</a></div>
+  <nav>
+    <!-- <a href="#" class="active">About</a> -->
+    <a href="close-kim-menu.html">Close Reading</a>
+    <a href="../distant_reading/distant-kim.html">Distant Reading</a>
+    <a href="../co_reading/co.html">Co-Reading</a>
+  </nav>
+</header>
+
+<h2>Close Reading</h2>
+<h3>가까이 읽기</h3>
+<div class="author-buttons">
+    <a href="close-kim-menu.html"><button class="author-btn">김소월</button></a>
+    <a href="close-yun-menu.html"><button class="author-btn">윤동주</button></a>
+    <a href="close-lee-menu.html"><button class="author-btn active">이상</button></a>
+    <a href="close-lim-menu.html"><button class="author-btn">임화</button></a>
+    <a href="close-han-menu.html"><button class="author-btn">한용운</button></a>
+  </div>
+
+<div class="poem-frame">
+  <p class="poem-title">보통기념</p>
+
+  <p class="poem-line" id="line_1">시가에 전화가일어나기전</p>
+  <p class="poem-line" id="line_2">역시나는 '뉴턴'이 가르치는 물리학에는 퍽무지하였다</p>
+
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_3">나는 거리를 걸었고 점두에 평과 산을보면은매일같이 물리학에 낙제하는 뇌수에피가묻은것처럼자그만하다</p>
+
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_4">계집을 신용치않는나를 계집은 절대로 신용하려들지 않는다 나의말에 계집에게 낙제운동으로 영향되는일이없었다</p>
+  
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_5">계집은 늘내말을 눈으로들었다 내말한마디가 계집의눈자위에 떨어져 본적이없다</p>
+  
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_6">기어코 시가에는 전화가일어났다 나는 오래 계집을잊었 었다 내가 나를 버렸던까닭이었다</p>
+
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_7">주제도 더러웠다 때끼인 손톱은길었다</p>
+  <p class="poem-line" id="line_8">무위한일월을 피난소에서 이런일 저런일</p>
+  <p class="poem-line" id="line_9">우라까에시'(이반) 재봉에 골몰하였느니라</p>
+
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_10">종이로 만든 푸른솔잎가지에 또한 종이로 만든흰학동체한개가 서있다 쓸쓸하다</p>
+
+  <div class="poem-stanza"></div>
+
+  <p class="poem-line" id="line_11">화로가햇볕같이 밝은데는 열대의 봄처럼 부드럽다 그한구석에서 나는지구의 공전일주를 기념할줄을 다알았더라</p>
+</div>
+
+<!-- ✅ MODAL -->
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <p id="modalTitle" class="modal-title">Line Detail</p>
+      <button class="modal-close" id="modalCloseBtn" aria-label="닫기">×</button>
+    </div>
+    <div class="modal-body">
+      <p id="modalLineText" class="clicked-line"></p>
+      <div class = "tag_contatiner"></div>
+      <p class="hint">배경을 클릭하거나 ESC를 누르면 닫힙니다.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById("modalOverlay");
+  const modalLineText = document.getElementById("modalLineText");
+  const closeBtn = document.getElementById("modalCloseBtn");
+
+  function openModal(text) {
+    modalLineText.textContent = `"${text}"`;
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // 스크롤 잠금
+  }
+
+  function closeModal() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = ""; // 스크롤 복구
+  }
+
+  // ✅ 각 poem-line 클릭 시 모달 열기
+  document.querySelectorAll(".poem-line").forEach(line => {
+    line.addEventListener("click", () => {
+      openModal(line.textContent.trim());
+    });
+  });
+
+  // ✅ 닫기 버튼
+  closeBtn.addEventListener("click", closeModal);
+
+  // ✅ 배경(오버레이) 클릭 시 닫기 (모달 박스 클릭은 제외)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  // ✅ ESC로 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("open")) {
+      closeModal();
+    }
+  });
+
+  const emotionDummyData = {
+
+  line_1: {
+    annotator_01: ["없음"],
+    annotator_02: ["없음"],
+    annotator_03: ["불안/걱정"],
+    annotator_04: ["기대감", "불안/걱정"],
+    annotator_05: ["없음"]
+  },
+
+  line_2: {
+    annotator_01: ["패배/자기혐오", "한심함", "부담/안_내킴"],
+    annotator_02: ["패배/자기혐오", "한심함", "부담/안_내킴", "불평/불만", "안타까움/실망"],
+    annotator_03: ["부끄러움", "불평/불만", "패배/자기혐오"],
+    annotator_04: ["깨달음", "부끄러움", "불평/불만", "한심함"],
+    annotator_05: ["한심함", "재미없음"]
+  },
+
+  line_3: {
+    annotator_01: ["공포/무서움", "역겨움/징그러움", "불안/걱정", "의심/불신", "지긋지긋", "패배/자기혐오"],
+    annotator_02: ["역겨움/징그러움", "우쭐댐/무시함", "한심함", "공포/무서움"],
+    annotator_03: ["불안/걱정", "비장함", "당황/난처", "의심/불신"],
+    annotator_04: ["패배/자기혐오", "힘듦/지침", "재미없음"],
+    annotator_05: ["깨달음", "패배/자기혐오", "절망", "힘듦/지침"]
+  },
+
+  line_4: {
+    annotator_01: ["패배/자기혐오", "지긋지긋", "재미없음"],
+    annotator_02: ["패배/자기혐오", "지긋지긋", "재미없음", "의심/불신", "불안/걱정", "우쭐댐/무시함"],
+    annotator_03: ["귀찮음", "부담/안_내킴", "의심/불신", "패배/자기혐오"],
+    annotator_04: ["깨달음", "재미없음", "불평/불만"],
+    annotator_05: ["깨달음", "비장함", "의심/불신"]
+  },
+
+  line_5: {
+    annotator_01: ["패배/자기혐오", "짜증", "증오/혐오", "의심/불신", "불평/불만"],
+    annotator_02: ["패배/자기혐오", "짜증", "의심/불신", "불평/불만", "불안/걱정", "서러움", "화남/분노"],
+    annotator_03: ["당황/난처", "부담/안_내킴", "불평/불만", "어이없음", "의심/불신", "증오/혐오", "짜증", "화남/분노"],
+    annotator_04: ["슬픔", "안타까움/실망"],
+    annotator_05: ["불평/불만", "어이없음", "의심/불신"]
+  },
+
+  line_6: {
+    annotator_01: ["패배/자기혐오", "당황/난처", "죄책감", "지긋지긋"],
+    annotator_02: ["패배/자기혐오", "죄책감", "지긋지긋", "불안/걱정", "힘듦/지침", "절망"],
+    annotator_03: ["부담/안_내킴", "안타까움/실망", "의심/불신", "패배/자기혐오", "한심함"],
+    annotator_04: ["당황/난처", "서러움", "슬픔", "안심/신뢰"],
+    annotator_05: ["재미없음", "패배/자기혐오"]
+  },
+
+  line_7: {
+    annotator_01: ["역겨움/징그러움", "불평/불만", "짜증", "증오/혐오"],
+    annotator_02: ["역겨움/징그러움", "불평/불만", "부담/안_내킴", "서러움", "불쌍함/연민", "안타까움/실망", "한심함"],
+    annotator_03: ["불쌍함/연민", "안타까움/실망", "힘듦/지침"],
+    annotator_04: ["경악", "불안/걱정", "증오/혐오", "역겨움/징그러움", "지긋지긋"],
+    annotator_05: ["부끄러움", "놀람", "안타까움/실망", "역겨움/징그러움"]
+  },
+
+  line_8: {
+    annotator_01: ["지긋지긋", "힘듦/지침"],
+    annotator_02: ["힘듦/지침", "지긋지긋", "안타까움/실망"],
+    annotator_03: ["당황/난처", "부담/안_내킴", "불안/걱정"],
+    annotator_04: ["불안/걱정", "힘듦/지침"],
+    annotator_05: ["재미없음", "힘듦/지침"]
+  },
+
+  line_9: {
+    annotator_01: ["불안/걱정", "없음"],
+    annotator_02: ["없음", "불안/걱정"],
+    annotator_03: ["없음"],
+    annotator_04: ["신기함/관심", "즐거움/신남", "기대감"],
+    annotator_05: ["서러움", "비장함", "힘듦/지침"]
+  },
+
+  line_10: {
+    annotator_01: ["슬픔", "불쌍함/연민", "서러움"],
+    annotator_02: ["신기함/관심", "불쌍함/연민", "슬픔", "서러움"],
+    annotator_03: ["놀람", "당황/난처", "부담/안_내킴", "없음"],
+    annotator_04: ["불쌍함/연민", "슬픔", "안타까움/실망", "힘듦/지침"],
+    annotator_05: ["불쌍함/연민", "깨달음", "서러움", "슬픔", "신기함/관심", "아껴주는"]
+  },
+
+  line_11: {
+    annotator_01: ["한심함", "안타까움/실망", "불안/걱정"],
+    annotator_02: ["불안/걱정", "편안/쾌적", "서러움", "안타까움/실망", "패배/자기혐오"],
+    annotator_03: ["신기함/관심"],
+    annotator_04: ["감동/감탄", "깨달음"],
+    annotator_05: ["깨달음", "편안/쾌적", "감동/감탄", "기쁨"]
+  }
+
+  };
+  // ✅ 모달에 태그 추가
+  function populateTags(lineId) {
+    const tagContainer = document.querySelector(".tag_contatiner");
+    tagContainer.innerHTML = ""; // 초기화
+
+    const emotions = emotionDummyData[lineId];
+    if (emotions) {
+      for (const [annotator, tags] of Object.entries(emotions)) {
+        const annotatorDiv = document.createElement("div");
+        annotatorDiv.classList.add("annotator-tags");
+
+        const annotatorTitle = document.createElement("h4");
+        annotatorTitle.textContent = `${annotator}:`;
+        annotatorDiv.appendChild(annotatorTitle);
+
+        const tagList = document.createElement("div");
+        tags.forEach(tag => {
+          const tagItem = document.createElement("span");
+          tagItem.classList.add("emotion-chip");  
+          tagItem.id = tag;
+          tagItem.textContent = tag;
+          tagList.appendChild(tagItem);
+        });
+        annotatorDiv.appendChild(tagList);
+        tagContainer.appendChild(annotatorDiv);
+      }
+    } else {
+      tagContainer.textContent = "태그 정보가 없습니다.";
+    }
+  }
+
+  // ✅ 모달 열 때 태그 채우기
+  document.querySelectorAll(".poem-line").forEach(line => {
+    line.addEventListener("click", () => {
+      populateTags(line.id);
+    });
+  });
+
+</script>
+
+</body>
+</html>

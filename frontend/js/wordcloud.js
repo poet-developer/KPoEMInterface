@@ -53,6 +53,8 @@ const dropdown = document.getElementById("emotionDropdown");
 const toggleBtn = document.getElementById("toggleBtn");
 const menu = document.getElementById("menu");
 const selectedText = document.getElementById("selectedText");
+const activeAuthor = document.querySelector(".author-btn.active");
+
 // const debugOut = document.getElementById("debugOut");
 // 이미지 변경 함수
 const desc = document.querySelector(".emotion-description");
@@ -66,7 +68,7 @@ function setSelected(value) {
   const idx = KOTE_44.indexOf(value);
 
   // ✅ idx로 이미지 로드: img/{idx}.jpg
-  const imgPath = `img/kim/${idx}.png`;
+  const imgPath = `../img/kim/${idx}.png`;
 
   // ✅ description 영역에 이미지 삽입
   desc.innerHTML = `
@@ -104,6 +106,7 @@ function renderMenu() {
     btn.innerHTML = `<span class="idx">${idx}</span> <span style="color:black;">${emo}</span>`;
     btn.addEventListener("click", () => {
       setSelected(emo);
+      updateWordcloudDescription();
       closeMenu();
     });
     menu.appendChild(btn);
@@ -123,6 +126,18 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeMenu();
 });
 
+function updateWordcloudDescription() {
+  const selectedEmotion = selected || "선택한 감정";
+
+  const description = document.getElementById("wordcloudDescription");
+
+  description.innerHTML = `
+    <b>${selectedEmotion}</b>과 관련성이 높은 단어들을
+    시각화한 <b>${activeAuthor.textContent.trim()}</b> 작품의 워드클라우드다.
+  `;
+}
+
 // 초기화
 renderMenu();
+updateWordcloudDescription();
 setSelected(selected);

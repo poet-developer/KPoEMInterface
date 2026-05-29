@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Close Reading | 한용운 <밤은 고요하고></title>
+<link rel="stylesheet" href="../styles/styles.css">
+<link rel="stylesheet" href="../styles/emotion_tag.css">
+<link rel="stylesheet" href="../styles/header.css">
+</head>
+
+<body>
+  <header>
+  <div class="logo"><a href="../../index.html">KPoEM</a></div>
+  <nav>
+    <!-- <a href="#" class="active">About</a> -->
+    <a href="close-kim-menu.html">Close Reading</a>
+    <a href="../distant_reading/distant-kim.html">Distant Reading</a>
+    <a href="../co_reading/co.html">Co-Reading</a>
+  </nav>
+</header>
+
+<h2>Close Reading</h2>
+<h3>가까이 읽기</h3>
+<div class="author-buttons">
+    <a href="close-kim-menu.html"><button class="author-btn">김소월</button></a>
+    <a href="close-yun-menu.html"><button class="author-btn">윤동주</button></a>
+    <a href="close-lee-menu.html"><button class="author-btn">이상</button></a>
+    <a href="close-lim-menu.html"><button class="author-btn">임화</button></a>
+    <a href="close-han-menu.html"><button class="author-btn active">한용운</button></a>
+  </div>
+
+<div class="poem-frame">
+  <p class="poem-title">밤은 고요하고</p>
+
+  <p class="poem-line" id="line_1">밤은 고요하고 방은 물로 씻은 듯합니다</p>
+  <p class="poem-line" id="line_2">이불은 개인 채로 옆에 놓아두고 화롯불을 다듬거리고 앉았습니다</p>
+  <p class="poem-line" id="line_3">밤은 얼마나 되었는지 화롯불은 꺼져서 찬 재가 되었습니다</p>
+  <p class="poem-line" id="line_4">그러나 그를 사랑하는 나의 마음은 오히려 식지 아니하였습니다</p>
+  <p class="poem-line" id="line_5">닭의 소리가 채 나기 전에 그를 만나서 무슨 말을 하였는데 꿈조차 분명치 않습니다 그려</p>
+</div>
+
+<!-- ✅ MODAL -->
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <p id="modalTitle" class="modal-title">Line Detail</p>
+      <button class="modal-close" id="modalCloseBtn" aria-label="닫기">×</button>
+    </div>
+    <div class="modal-body">
+      <p id="modalLineText" class="clicked-line"></p>
+      <div class = "tag_contatiner"></div>
+      <p class="hint">배경을 클릭하거나 ESC를 누르면 닫힙니다.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById("modalOverlay");
+  const modalLineText = document.getElementById("modalLineText");
+  const closeBtn = document.getElementById("modalCloseBtn");
+
+  function openModal(text) {
+    modalLineText.textContent = `"${text}"`;
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // 스크롤 잠금
+  }
+
+  function closeModal() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = ""; // 스크롤 복구
+  }
+
+  // ✅ 각 poem-line 클릭 시 모달 열기
+  document.querySelectorAll(".poem-line").forEach(line => {
+    line.addEventListener("click", () => {
+      openModal(line.textContent.trim());
+    });
+  });
+
+  // ✅ 닫기 버튼
+  closeBtn.addEventListener("click", closeModal);
+
+  // ✅ 배경(오버레이) 클릭 시 닫기 (모달 박스 클릭은 제외)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  // ✅ ESC로 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("open")) {
+      closeModal();
+    }
+  });
+
+const emotionDummyData = {
+
+line_1: {
+  annotator_01: ["편안/쾌적", "깨달음", "뿌듯함"],
+  annotator_02: ["불안/걱정", "슬픔", "편안/쾌적"],
+  annotator_03: ["감동/감탄", "깨달음", "불안/걱정", "힘듦/지침"],
+  annotator_04: ["감동/감탄", "신기함/관심"],
+  annotator_05: ["깨달음", "놀람", "편안/쾌적", "감동/감탄"]
+},
+
+line_2: {
+  annotator_01: ["불안/걱정"],
+  annotator_02: ["편안/쾌적", "서러움"],
+  annotator_03: ["편안/쾌적"],
+  annotator_04: ["감동/감탄", "기쁨", "아껴주는", "편안/쾌적"],
+  annotator_05: ["힘듦/지침", "편안/쾌적"]
+},
+
+line_3: {
+  annotator_01: ["안타까움/실망", "불안/걱정", "깨달음", "신기함/관심", "불쌍함/연민"],
+  annotator_02: ["불안/걱정", "서러움", "슬픔", "안타까움/실망", "지긋지긋"],
+  annotator_03: ["안타까움/실망"],
+  annotator_04: ["당황/난처", "불안/걱정", "안타까움/실망", "힘듦/지침"],
+  annotator_05: ["불안/걱정", "경악", "공포/무서움", "불쌍함/연민", "슬픔", "안타까움/실망"]
+},
+
+line_4: {
+  annotator_01: ["아껴주는", "비장함", "뿌듯함", "기대감", "깨달음", "환영/호의"],
+  annotator_02: ["비장함", "뿌듯함", "기쁨", "아껴주는", "안심/신뢰"],
+  annotator_03: ["기쁨", "깨달음", "비장함", "행복"],
+  annotator_04: ["감동/감탄", "아껴주는", "존경"],
+  annotator_05: ["비장함", "서러움", "슬픔"]
+},
+
+line_5: {
+  annotator_01: ["불안/걱정", "당황/난처", "부담/안_내킴", "서러움", "패배/자기혐오"],
+  annotator_02: ["불안/걱정", "당황/난처", "서러움", "불평/불만", "슬픔", "안타까움/실망"],
+  annotator_03: ["귀찮음", "부담/안_내킴", "안타까움/실망"],
+  annotator_04: ["당황/난처", "불안/걱정", "슬픔", "힘듦/지침", "공포/무서움"],
+  annotator_05: ["당황/난처", "짜증"]
+}
+};
+  // ✅ 모달에 태그 추가
+  function populateTags(lineId) {
+    const tagContainer = document.querySelector(".tag_contatiner");
+    tagContainer.innerHTML = ""; // 초기화
+
+    const emotions = emotionDummyData[lineId];
+    if (emotions) {
+      for (const [annotator, tags] of Object.entries(emotions)) {
+        const annotatorDiv = document.createElement("div");
+        annotatorDiv.classList.add("annotator-tags");
+
+        const annotatorTitle = document.createElement("h4");
+        annotatorTitle.textContent = `${annotator}:`;
+        annotatorDiv.appendChild(annotatorTitle);
+
+        const tagList = document.createElement("div");
+        tags.forEach(tag => {
+          const tagItem = document.createElement("span");
+          tagItem.classList.add("emotion-chip");  
+          tagItem.id = tag;
+          tagItem.textContent = tag;
+          tagList.appendChild(tagItem);
+        });
+        annotatorDiv.appendChild(tagList);
+        tagContainer.appendChild(annotatorDiv);
+      }
+    } else {
+      tagContainer.textContent = "태그 정보가 없습니다.";
+    }
+  }
+
+  // ✅ 모달 열 때 태그 채우기
+  document.querySelectorAll(".poem-line").forEach(line => {
+    line.addEventListener("click", () => {
+      populateTags(line.id);
+    });
+  });
+
+</script>
+
+</body>
+</html>
