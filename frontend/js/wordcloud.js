@@ -49,6 +49,21 @@ const KOTE_44 = [
 // 기본값
 let selected = "불평/불만";
 
+let currentScript = document.currentScript;
+
+let poet = currentScript.dataset.poet;
+
+const poetDirMap = {
+  김소월: "kim",
+  윤동주: "yun",
+  이상: "lee",
+  임화: "lim",
+  한용운: "han",
+};
+
+let dir = poetDirMap[poet];
+console.log("Selected poet:", poet, "Directory:", dir);
+
 const dropdown = document.getElementById("emotionDropdown");
 const toggleBtn = document.getElementById("toggleBtn");
 const menu = document.getElementById("menu");
@@ -68,7 +83,7 @@ function setSelected(value) {
   const idx = KOTE_44.indexOf(value);
 
   // ✅ idx로 이미지 로드: img/{idx}.jpg
-  const imgPath = `../img/kim/${idx}.png`;
+  const imgPath = `../img/${dir}/${idx}.png`;
 
   // ✅ description 영역에 이미지 삽입
   desc.innerHTML = `
