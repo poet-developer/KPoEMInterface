@@ -121,7 +121,8 @@
     .gradient-box {
   margin-top: 14px;
   width: 100%;
-  height: 340px;
+  max-width: 1000px;
+  height: 400px;
   background: #ccc;
   position: relative;
   overflow: hidden;
@@ -225,3 +226,4 @@ textarea,
   width: 100%;
   max-width: 600px;
 }
+
