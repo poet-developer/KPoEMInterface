@@ -235,3 +235,87 @@ iframe {
 
   color: #555;
 }
+
+.home-intro {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 40px;
+    line-height: 1.9;
+    color: #333;
+}
+
+.home-intro h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.home-intro h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 48px;
+}
+
+.home-intro p {
+    font-size: 1rem;
+    margin-bottom: 28px;
+    text-align: justify;
+}
+
+.home-intro p:last-child {
+    margin-bottom: 0;
+}
+
+
+.credits {
+  max-width: 800px;
+  margin: 120px auto 80px;
+  padding: 0 40px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.credits h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+.credit-group {
+  margin-bottom: 28px;
+}
+
+.credit-group h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.credit-group p {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.credit-group a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+}
+
+.credit-group a:hover {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.copyright {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  color: #888;
+}

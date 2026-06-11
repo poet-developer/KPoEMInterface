@@ -281,7 +281,7 @@
   function applyEmotionResult(result) {
     const { emotions, startColor, endColor } = result;
 
-    const text = `${emotions[0]} ${emotions[1]}과(와) ${emotions[2]}`;
+    const text = `${emotions[0]}, ${emotions[1]}과(와) ${emotions[2]}`;
     revealingValue.textContent = text;
 
     // ⭐ 핵심 추가 (wipe 방식 유지)
