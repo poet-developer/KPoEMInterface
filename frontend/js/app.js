@@ -107,6 +107,32 @@
         secondary: { rgb: "rgb(164, 249, 206)", hex: "#a4f9ceff" },
       },
     ],
+
+    김수영01: [
+      {
+        emotions: ["깊은", "안타까움/실망", "비장함"],
+        primary: { rgb: "rgb(76, 26, 30)", hex: "#4c1a1eff" },
+        secondary: { rgb: "rgb(153, 142, 134)", hex: "#998e86ff" },
+      },
+      {
+        emotions: ["깊은", "안타까움/실망", "비장함"],
+        primary: { rgb: "rgb(112, 19, 64)", hex: "#701340ff" },
+        secondary: { rgb: "rgb(153, 142, 134)", hex: "#998e86ff" },
+      },
+    ],
+
+    백석01: [
+      {
+        emotions: ["포근한", "흐뭇함(귀여움/예쁨)", "아껴주는"],
+        primary: { rgb: "rgb(247, 230, 197)", hex: "#f7e6c5ff" },
+        secondary: { rgb: "rgb(198, 133, 129)", hex: "#c68581ff" },
+      },
+      {
+        emotions: ["포근한", "흐뭇함(귀여움/예쁨)", "아껴주는"],
+        primary: { rgb: "rgb(52, 127, 118)", hex: "#347f76ff" },
+        secondary: { rgb: "rgb(209, 83, 129)", hex: "#d15381ff" },
+      },
+    ],
   };
 
   if (!btn) return;
@@ -179,6 +205,22 @@
 네 눈망울에는
 초롱초롱한
 별들의 이야기를 머금었다.`,
+
+    백석01: `눈은 푹푹 나리고
+아름다운 나타샤는 나를 사랑하고
+어데서 흰 당나귀도 오늘밤이 좋아서 응앙응앙 울을 것이다`,
+
+    김수영01: `자유를 위해서
+비상(飛翔)하여 본 일이 있는
+사람이면 알지.
+노고지리가
+무엇을 보고
+노래하는가를
+어째서 자유에는
+피 냄새가 섞여 있는가를
+혁명(革命)은
+왜 고독한 것인가를
+`,
   };
 
   let CURRENT_POEM_KEY = "김소월01";
@@ -290,8 +332,8 @@
 
     gradientFill.style.background = `linear-gradient(90deg,
     ${startColor.rgb} 0%,
-    ${startColor.rgb} 70%,
-    ${endColor.rgb} 70%,
+    ${startColor.rgb} 60%,
+    ${endColor.rgb} 60%,
     ${endColor.rgb} 100%
   )`;
 
