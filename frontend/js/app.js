@@ -102,9 +102,9 @@
         secondary: { rgb: "rgb(224, 249, 236)", hex: "#e0f9ecff" },
       },
       {
-        emotions: ["사랑스러운", "흐뭇함(귀여움/예쁨)", "기쁨"],
-        primary: { rgb: "rgb(124, 193, 185)", hex: "#7cc1b9ff" },
-        secondary: { rgb: "rgb(164, 249, 206)", hex: "#a4f9ceff" },
+        emotions: ["맑은", "흐뭇함(귀여움/예쁨)", "기쁨"],
+        primary: { rgb: "rgb(203, 216, 215)", hex: "#cbd8d7ff" },
+        secondary: { rgb: "rgb(181, 226, 203)", hex: "#b5e2cbff" },
       },
     ],
 
