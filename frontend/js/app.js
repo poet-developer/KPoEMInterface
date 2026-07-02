@@ -14,48 +14,35 @@
 
   const PALETTES = {
     김소월01: [
-      // // ✅ 팔레트 버전 1 (연두 → 베이지)
-      // {
-      //   emotions: ["가벼운", "기대감", "기쁨"],
-      //   primary: "#E9F7A1", // 연두 (면적 큼)
-      //   secondary: "#E5E3D6", // 베이지 (면적 작음)
-      // },
-
-      // // ✅ 팔레트 버전 2 (오프화이트 → 옐로우)
-      // {
-      //   emotions: ["가벼운", "기대감", "기쁨"],
-      //   primary: "#E8E9D6", // 오프화이트 (면적 큼)
-      //   secondary: "#F6ECA1", // 옐로우 (면적 작음)
-      // },
       {
         emotions: ["우울한", "슬픔", "서러움"],
         primary: { rgb: "rgb(190, 197, 206)", hex: "#bec5ceff" },
         secondary: { rgb: "rgb(140, 108, 153)", hex: "#8c6c99ff" },
       },
       {
-        emotions: ["깊은", "슬픔", "서러움"],
-        primary: { rgb: "rgb(26, 48, 76)", hex: "#1a304cff" },
-        secondary: { rgb: "rgb(147, 134, 153)", hex: "#938699ff" },
+        emotions: ["품위있는", "슬픔", "서러움"],
+        primary: { rgb: "rgb(24, 40, 61)", hex: "#18283dff" },
+        secondary: { rgb: "rgb(111, 89, 119)", hex: "#6f5977ff" },
       },
     ],
     윤동주01: [
       {
-        emotions: ["그윽한", "슬픔", "비장함"],
-        primary: { rgb: "rgb(217,218,218)", hex: "#d9dadaff" },
-        secondary: { rgb: "rgb(191,189,187)", hex: "#bfbdbbff" },
+        emotions: ["순수한", "슬픔", "서러움"],
+        primary: { rgb: "rgb(237,229,225)", hex: "#ede5e1ff" },
+        secondary: { rgb: "rgb(169,161,173)", hex: "#a9a1adff" },
       },
       {
-        emotions: ["순수한", "슬픔", "비장함"],
-        primary: { rgb: "rgb(134,144,158)", hex: "#86909eff" },
-        secondary: { rgb: "rgb(249,217,192)", hex: "#f9d9c0ff" },
+        emotions: ["섬세한", "슬픔", "서러움"],
+        primary: { rgb: "rgb(190,204,221)", hex: "#beccddff" },
+        secondary: { rgb: "rgb(223,222,224)", hex: "#dfdee0ff" },
       },
     ],
 
     이상01: [
       {
-        emotions: ["우울한", "서러움", "슬픔"],
-        primary: { rgb: "rgb(178, 135, 193)", hex: "#b287c1ff" },
-        secondary: { rgb: "rgb(78, 89, 104)", hex: "#4e5968ff" },
+        emotions: ["그윽한", "서러움", "슬픔"],
+        primary: { rgb: "rgb(172, 163, 175)", hex: "#aca3afff" },
+        secondary: { rgb: "rgb(217, 218, 219)", hex: "#d9dadbff" },
       },
       {
         emotions: ["우울한", "서러움", "슬픔"],
@@ -71,7 +58,7 @@
         secondary: { rgb: "rgb(22, 71, 135)", hex: "#164787ff" },
       },
       {
-        emotions: ["강인한", "비장함", "슬픔"],
+        emotions: ["기운찬", "비장함", "슬픔"],
         primary: { rgb: "rgb(204, 99, 20)", hex: "#cc6314ff" },
         secondary: { rgb: "rgb(26, 117, 237)", hex: "#1a75edff" },
       },
@@ -84,27 +71,22 @@
         secondary: { rgb: "rgb(64, 19, 81)", hex: "#401351ff" },
       },
       {
-        emotions: ["감성적인", "슬픔", "서러움"],
-        primary: { rgb: "rgb(55, 93, 142)", hex: "#375d8eff" },
-        secondary: { rgb: "rgb(208, 115, 244)", hex: "#d073f4ff" },
-      },
-      {
-        emotions: ["감성적인", "슬픔", "서러움"],
-        primary: { rgb: "rgb(55, 93, 142)", hex: "#375d8eff" },
-        secondary: { rgb: "rgb(244, 244, 244)", hex: "#f4f4f4ff" },
+        emotions: ["우울한", "슬픔", "서러움"],
+        primary: { rgb: "rgb(78, 89, 104)", hex: "#4e5968ff" },
+        secondary: { rgb: "rgb(177, 135, 193)", hex: "#b187c1ff" },
       },
     ],
 
     신석정01: [
       {
         emotions: ["순수한", "흐뭇함(귀여움/예쁨)", "기쁨"],
-        primary: { rgb: "rgb(199, 234, 230)", hex: "#c7eae6ff" },
+        primary: { rgb: "rgb(203, 216, 215)", hex: "#cbd8d7ff" },
         secondary: { rgb: "rgb(224, 249, 236)", hex: "#e0f9ecff" },
       },
       {
-        emotions: ["맑은", "흐뭇함(귀여움/예쁨)", "기쁨"],
-        primary: { rgb: "rgb(203, 216, 215)", hex: "#cbd8d7ff" },
-        secondary: { rgb: "rgb(181, 226, 203)", hex: "#b5e2cbff" },
+        emotions: ["감각적인", "흐뭇함(귀여움/예쁨)", "기쁨"],
+        primary: { rgb: "rgb(78, 102, 99)", hex: "#4e6663ff" },
+        secondary: { rgb: "rgb(139, 196, 166)", hex: "#8bc4a6ff" },
       },
     ],
 
@@ -123,14 +105,14 @@
 
     백석01: [
       {
-        emotions: ["포근한", "흐뭇함(귀여움/예쁨)", "아껴주는"],
-        primary: { rgb: "rgb(247, 230, 197)", hex: "#f7e6c5ff" },
-        secondary: { rgb: "rgb(198, 133, 129)", hex: "#c68581ff" },
+        emotions: ["사랑스러운", "흐뭇함(귀여움/예쁨)", "아껴주는"],
+        primary: { rgb: "rgb(249, 220, 164)", hex: "#f9dca4ff" },
+        secondary: { rgb: "rgb(193, 128, 124)", hex: "#c1807cff" },
       },
       {
-        emotions: ["포근한", "흐뭇함(귀여움/예쁨)", "아껴주는"],
-        primary: { rgb: "rgb(52, 127, 118)", hex: "#347f76ff" },
-        secondary: { rgb: "rgb(209, 83, 129)", hex: "#d15381ff" },
+        emotions: ["사랑스러운", "흐뭇함(귀여움/예쁨)", "아껴주는"],
+        primary: { rgb: "rgb(124, 193, 185)", hex: "#7cc1b9ff" },
+        secondary: { rgb: "rgb(249, 164, 196)", hex: "#f9a4c4ff" },
       },
     ],
   };
