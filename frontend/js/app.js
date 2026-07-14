@@ -92,14 +92,14 @@
 
     김수영01: [
       {
-        emotions: ["깊은", "안타까움/실망", "비장함"],
+        emotions: ["깊은", "안타까움/실망", "슬픔"],
         primary: { rgb: "rgb(76, 26, 30)", hex: "#4c1a1eff" },
-        secondary: { rgb: "rgb(153, 142, 134)", hex: "#998e86ff" },
+        secondary: { rgb: "rgb(153, 141, 134)", hex: "#998e86ff" },
       },
       {
-        emotions: ["깊은", "안타까움/실망", "비장함"],
-        primary: { rgb: "rgb(112, 19, 64)", hex: "#701340ff" },
-        secondary: { rgb: "rgb(153, 142, 134)", hex: "#998e86ff" },
+        emotions: ["깊은", "안타까움/실망", "슬픔"],
+        primary: { rgb: "rgb(91, 35, 62)", hex: "#701340ff" },
+        secondary: { rgb: "rgb(144, 137, 147)", hex: "#998e86ff" },
       },
     ],
 
