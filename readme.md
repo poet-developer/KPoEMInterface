@@ -110,7 +110,7 @@ KPoEM Interface는 감정 데이터셋과 인공지능 분석 결과를 활용�
 
 > ⬇️ 본 데이터셋과 감정 분류 모델은 공동연구를 통해 개발되었으며, 상세 내용은 아래 관련 논문을 참고하기 바란다.
 >
-> Lim, I., Ji, H., & Kim, B. (2026). KPoEM: A human-annotated dataset for emotion classification and RAG-based poetry generation in Korean modern poetry. The Review of Korean Studies, 29(1), 161–206. https://doi.org/10.25024/review.2026.29.1.161
+> Lim, I., Ji, H., & Kim, B. (2026). KPoEM: A human-annotated dataset for emotion classification and RAG-based poetry generation in Korean modern poetry. The Review of Korean Studies, 29(1), 161–206. [10.25024/review.2026.29.1.006](https://doi.org/10.25024/review.2026.29.1.006)
 
 ---
 
